@@ -1,9 +1,9 @@
 import express, { Router } from 'express';
-import { getItems } from '@controllers/itemController';
+import { getItems, getItem } from '@controllers/itemController';
 
 const router: Router = express.Router();
 
-// Define the route for getting a list of items
 router.get('/items', getItems);
+router.get('/items/:id', getItem);
 
 export default router;

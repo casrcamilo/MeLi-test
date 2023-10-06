@@ -25,6 +25,24 @@ export type ListItemsResponse = {
   }[]
 };
 
+
+export type ItemResponse = {
+  id: string
+  title: string;
+  price: number;
+  currency_id: string;
+  thumbnail: string;
+  condition: string;
+  shipping: {
+    free_shipping: boolean;
+  };
+  sold_quantity: number;
+}
+
+export type ItemDescriptionResponse = {
+  plain_text: string;
+}
+
 export type Author = {
   name: string;
   lastname: string;
@@ -36,17 +54,24 @@ export type Price = {
   decimals: number;
 };
 
-export type ItemResponse = {
+export type Item = {
   id: string;
   title: string;
   price: Price;
   picture: string;
   condition: string;
   free_shipping: boolean;
+  sold_quantity?: number;
+  description?: string;
 };
 
 export type HydratedListItems = {
   author: Author;
   categories: string[]; // You can replace this with the actual categories data
-  items: ItemResponse[];
+  items: Item[];
 };
+
+export type HydratedItem = {
+  author: Author;
+  item: Item;
+}

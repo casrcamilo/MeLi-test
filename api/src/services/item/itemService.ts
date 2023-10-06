@@ -14,7 +14,28 @@ export const getItemList = async (query?: string) => {
     const results: ListItemsResponse = response.data;
     return results;
   } catch (error) {
-    // Handle errors, e.g., log the error or throw an exception
+    console.error(error)
+    throw error;
+  }
+};
+
+export const getItemDescription = async (itemId?: string) => {
+  try {
+    // Define the API endpoint URL with the query parameter
+    const itemUrl = `https://api.mercadolibre.com/items/${itemId}`;
+    const itemDescriptionUrl = `https://api.mercadolibre.com/items/${itemId}/description`;
+
+    const [itemResponse, itemDescriptionResponse] = await Promise.all([
+      axios.get(itemUrl),
+      axios.get(itemDescriptionUrl)
+    ])
+
+    return {
+      itemResponse: itemResponse.data,
+      itemDescriptionResponse: itemDescriptionResponse.data
+    };
+  } catch (error) {
+    console.error(error)
     throw error;
   }
 };
