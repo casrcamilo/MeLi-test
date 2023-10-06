@@ -1,0 +1,47 @@
+.searchbar-container {
+  position: relative;
+  z-index: 915;
+  color: #333;
+  font-size: 16px;
+  margin: 0;
+  font-family: inherit;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  height: 40px;
+  width: 100%;
+  border-style: solid;
+  border-color: rgba(0,0,0,0);
+  border-width: 1.5px;
+}
+.searchbar-container:focus-within {
+  border-color: #3483fa;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.searchbar-input {
+  flex: 1;
+  padding: 0;
+}
+
+.searchbar-input input {
+  padding: 10px 60px 10px 15px;
+}
+
+.searchbar-divider {
+  height: 100%;
+}
+
+.searchbar-icon.MuiButtonBase-root {
+  border-radius: 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.searchbar-icon.MuiButtonBase-root:hover {
+  transition: background-color 0.3s ease-in-out;
+}
+
