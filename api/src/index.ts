@@ -1,9 +1,6 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import * as bodyParser from 'body-parser';
-
-// Import your routes
-// import userRoutes from '@routes/userRoutes';
 import itemsRoutes from '@routes/itemRoutes';
 
 // Create an Express application
@@ -17,12 +14,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Use your routes
-/* app.use('/users', userRoutes); */
 app.use('/api', itemsRoutes);
 
 // Define a default route
 app.get('/', (req, res) => {
-  res.send('Welcome to your Express.js application');
+  res.send('Welcome to MeLi test application');
 });
 
 // Start the server
