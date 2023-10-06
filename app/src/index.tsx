@@ -5,6 +5,7 @@ import App from './App';
 import theme from './theme';
 // Styles
 import './assets/styles/main.scss';
+import { AppProvider } from './AppContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <AppProvider>
+        <App />
+      </AppProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -67,7 +67,7 @@ export type Item = {
 
 export type HydratedListItems = {
   author: Author;
-  categories: string[]; // You can replace this with the actual categories data
+  categories: string[];
   items: Item[];
 };
 

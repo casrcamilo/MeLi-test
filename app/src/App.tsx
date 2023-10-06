@@ -1,19 +1,37 @@
 import React from 'react';
-import Container from '@mui/material/Container';
-import Navbar from './components/navbar/Navbar';
-import Footer from './components/footer/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Box, Container } from '@mui/material';
+import theme from './theme';
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
+import Home from './containers/Home';
+import ListItems from './containers/ListItems';
+import Item from './containers/Item';
+import NotFound from './containers/NotFound';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <Container maxWidth="xl">
-        {/* Your app content goes here */}
-        <h1>Welcome to My Material-UI App</h1>
-      </Container>
+      <Box 
+        component="section" 
+        sx={{ 
+          backgroundColor: theme.palette.background.default,
+        }}
+      >
+        <Container maxWidth="lg" sx={{ py: 2 }}>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/items" element={<ListItems />}/>
+            <Route path="/items/:id" element={<Item />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Container>
+      </Box>
       <Footer />
-    </div>
-  );
+    </Router>
+  ); 
 }
 
 export default App;

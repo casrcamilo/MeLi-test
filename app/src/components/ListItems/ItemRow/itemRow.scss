@@ -1,0 +1,55 @@
+.item-row-link {
+  text-decoration: none;
+}
+
+.item-row-container{
+  padding: 24px;
+  height: 186px;
+}
+
+.item-row-container:hover{
+  background-color: rgba(0,0,0,.04);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.item-row-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-row-image {
+  height: 100%;
+  max-width: 100%;
+}
+
+.MuiTypography-root.item-row-title {
+  color: #333;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.MuiTypography-root.item-row-price {
+  color: #333;
+  display: flex;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-right: 8px;
+}
+
+.MuiChip-root.item-row-shipping {
+  width: fit-content;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .item-row-container{
+    height: auto;
+  }
+  .item-row-image {
+    width: 100%;
+  }
+
+}

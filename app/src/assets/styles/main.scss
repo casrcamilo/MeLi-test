@@ -12,3 +12,32 @@
 body {
   margin: 0;
 }
+
+body {
+  overflow: overlay;
+  scrollbar-width: thin; /* for Firefox */
+  scrollbar-color: transparent transparent; /* for Firefox */
+}
+
+/* Customize scrollbar styles (optional) */
+body::-webkit-scrollbar {
+  width: 6px; /* Adjust the width as needed */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2); /* Color of the scrollbar thumb */
+  border-radius: 3px; /* Rounded corners for the thumb */
+}
+
+/* Firefox scrollbar styles (optional) */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+
+
